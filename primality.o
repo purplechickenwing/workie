@@ -1,0 +1,23 @@
+
+.data
+prime: .string "true"
+notprime: .string "false"
+
+main:
+    li a7 5
+    ecall
+    mv s0 a0
+    add s1 zero 2
+    jal prime
+
+prime:
+    div t3 s0 s1
+    mul t3 t0 s1
+    sub t4 s0 t3
+    beq t4 zero notpri
+    add s1 s1 1
+    beq s1 s0 pri
+
+
+
+  
